@@ -19,6 +19,7 @@ html {
 }
 body {
   background-color: var(--bg-main);
+  margin-top: 100px;
 }
 header {
   display: flex;
@@ -27,6 +28,8 @@ header {
   font-size: 13px;
   justify-content: space-around;
   background-color: var(--bg-header);
+  position: fixed;
+  top: 0;
 }
 div h1 span {
   color: red;
@@ -37,8 +40,7 @@ div h1 {
 #logo {
   color: white;
 }
-nav {
-}
+
 nav ul {
   list-style-type: none;
 }
@@ -264,21 +266,34 @@ main {
 }
 .detail-skills-box {
   display: flex;
-  flex-wrap: wrap;
 }
 .detail-skills-left {
-  width: 50%;
+  flex: 1 1 50%;
   margin-top: 10px;
 }
 .detail-skills-right {
-  width: 50%;
+  flex: 1 1 50%;
+  margin-top: 10px;
+  margin-left: 100px;
+}
+.below {
   margin-top: 10px;
 }
-progress[value] {
-  accent-color: #635cc0;
-  height: 15px;
-  width: 320px;
+
+progress {
+  background: #333;
+  border-radius: 13px;
+  height: 8px;
+  width: 100%;
 }
+progress::-webkit-progress-bar {
+  border-radius: 13px;
+}
+progress::-webkit-progress-value {
+  background-color: blue;
+  border-radius: 13px;
+}
+
 #detail-hoppy {
   margin-left: 50px;
   margin-bottom: 30px;
@@ -300,14 +315,14 @@ progress[value] {
 
 .detail-contact-box {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .column-left {
-  flex: 1 1 55%;
+  flex: 1 1 50%;
 }
 .column-right {
-  flex: 1 1 45%;
+  flex: 1 1 50%;
+  margin-left: 75px;
 }
 .column-element {
   padding-bottom: 20px;
@@ -362,4 +377,15 @@ footer {
   letter-spacing: 3px;
   font-weight: 300;
   opacity: 0.8;
+}
+
+/* Tablet */
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+
+}
+/* Smartphone */
+@media screen and (max-width: 767px) {
+  nav {
+    display: none;
+  }
 }
